@@ -4,13 +4,9 @@ function Apple() {
     this.x = floor(random(cols)) * grid;
     this.y = floor(random(rows)) * grid;
 
-    this.show = function () {
+    this.show = () => {
         fill(255, 0, 50);
         rect(this.x, this.y, grid, grid);
-    }
-
-    this.update = function () {
-
     }
 
 }

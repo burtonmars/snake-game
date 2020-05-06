@@ -10,12 +10,12 @@ function Snake() {
     this.total = 0;
     this.tail = [];
 
-    this.dir = function (x, y) {
+    this.dir = (x, y) => {
         this.xspeed = x;
         this.yspeed = y;
     }
 
-    this.update = function () {
+    this.update = () => {
         if (this.total === this.tail.length) {
             for (let i = 0; i < this.tail.length-1; i++) {
                 this.tail[i] = this.tail[i + 1];
@@ -30,9 +30,9 @@ function Snake() {
         this.y = constrain(this.y, 0, height - grid);
     }
 
-    this.show = function () {
+    this.show = () => {
         fill(255);
-        for (let i = 0; i < this.tail.length-1; i++) {
+        for (let i = 0; i < this.tail.length; i++) {
             rect(this.tail[i].x, this.tail[i].y, grid, grid);
         }
         fill(255);
@@ -46,5 +46,12 @@ function Snake() {
             return true;
         } else return false;
     }
+
+    // this.hitWall = () => {
+    //     if (this.tail[0].x == 0 || this.tail[0].x == width || this.tail[0].y == 0 
+    //     || this.tail[0].y == height) {
+    //         return true;
+    //     } else return false;
+    // }
 
 }
